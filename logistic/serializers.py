@@ -37,6 +37,7 @@ class StockSerializer(serializers.ModelSerializer):
             StockProduct.objects.update_or_create(
                 stock=instance,
                 product=position_data['product'],
-                defaults={'quantity': position_data['quantity'], 'price': position_data['price']}
+                defaults={'quantity': position_data['quantity'],
+                          'price': position_data['price']}
             )
         return instance
